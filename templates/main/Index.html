@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="container">
+    <section class="text-gray-600 body-font">
+
+        <div class="container px-5 py-24 mx-auto flex flex-col">
+            {% if flag %}
+            <div class="lg:w-4/6 mx-auto">
+                <div class="rounded-lg h-64 overflow-hidden">
+                    <img alt="content" class="object-cover object-center h-max w-max" src="{{url}}">
+                </div>
+                <a href="{{ url }}"><button
+                        class="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">Download</button></a>
+                <div class="flex flex-col sm:flex-row mt-10">
+
+                    {% endif %}
+
+
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <label class="block text-left" style="max-width: 1000px">
+                            <span class="text-gray-700">Enter Your Text</span>
+                            <textarea
+                                class="form-textarea mt-1 block h-full w-full border-solid border-4 border-light-blue-500"
+                                rows="7" name='text' placeholder="Enter some long form content."></textarea>
+                        </label>
+
+                        <button
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full items-center">
+                            SUMIT
+                        </button>
+
+                        <div class="relative inline-flex">
+                            <svg class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232">
+                                <path
+                                    d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
+                                    fill="#648299" fill-rule="nonzero" /></svg>
+                            <select
+                                class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
+                                <option>Choose a color</option>
+                                <option>Red</option>
+                                <option>Blue</option>
+                                <option>Yellow</option>
+                                <option>Black</option>
+                                <option>Orange</option>
+                                <option>Purple</option>
+                                <option>Gray</option>
+                                <option>White</option>
+                            </select>
+                        </div>
+                    </form>
+                    <div class="p-10">
+
+
+                    </div>
+                </div>
+            </div>
+    </section>
+</div>
+
+<script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
+{% endblock  %}
