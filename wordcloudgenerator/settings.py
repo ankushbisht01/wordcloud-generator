@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG' , Default=False , cast=bool)
+DEBUG = config('DEBUG', Default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -58,7 +58,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR,'templates')
+            os.path.join(BASE_DIR, 'templates'),
+            BASE_DIR / 'templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -127,7 +128,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-STATIC_ROOT = os.path.join(BASE_DIR , 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
