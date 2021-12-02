@@ -1,0 +1,82 @@
+{% extends 'base.html' %} {% block content %} {% include 'navbar.html' %}
+
+<div class="container">
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto flex flex-col">
+      {% if flag %}
+      <div class="lg:w-4/6 mx-auto">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-max w-max" src="{{url}}" />
+        </div>
+        <a href="{{ url }}"><button class="
+              ml-4
+              inline-flex
+              text-gray-400
+              bg-gray-800
+              border-0
+              py-2
+              px-6
+              focus:outline-none
+              hover:bg-gray-700 hover:text-white
+              rounded
+              text-lg
+            ">
+            Download
+          </button></a>
+        <div class="flex flex-col sm:flex-row mt-10">
+          {% endif %}
+
+          <form method="post">
+            {% csrf_token %}
+            <label class="block text-left" style="max-width: 1000px">
+              <span class="text-gray-700">Enter Your Text</span>
+              <textarea class="
+                  form-textarea
+                  mt-1
+                  block
+                  h-full
+                  w-full
+                  border-solid border-4 border-light-blue-500
+                " rows="7" name="text" placeholder="Enter some long form content."></textarea>
+            </label>
+            <p class="label">Text Color</p>
+            <div class="select my-1 max-w-xs">
+              <select name="options">
+                {% for color in colormap %}
+                  <option value={{color}}>{{color}}</option>
+                {% endfor %}
+                
+              </select>
+            </div>
+            
+
+            <button class="
+                bg-blue-500
+                hover:bg-blue-700
+                text-white
+                font-bold
+                py-2
+                px-4
+                rounded-full
+                items-center
+              ">
+              SUMIT
+            </button>
+
+
+
+
+
+          </form>
+        </div>
+
+
+
+      </div>
+    </div>
+</div>
+</div>
+<script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
+</section>
+</div>
+{% endblock %}
