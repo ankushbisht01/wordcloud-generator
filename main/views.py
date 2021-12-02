@@ -17,9 +17,9 @@ def index(request):
         form = forms.WordcloudForm(request.POST)
         if form.is_valid():
             text = form.cleaned_data['text']
-            options = request.POST['options']
+            colormap = request.POST['options']
             Image = ImageGen()
-            content = Image.normal_wordcloud(text,options)
+            content = Image.normal_wordcloud(text,colormap)
             url = Image.upload(content)
             colormaps = ['Paste1', 'Paste2', 'Paired', 'Accent', 'Dark2',
                          'set1', 'Set2', 'Set3', 'tab10', 'tab20', 'tab20b', 'tab20c']
