@@ -32,6 +32,8 @@
               <span class="text-gray-700">Enter Your Text</span>
               <textarea class="
                   form-textarea
+                  text-lg
+                  focus:text-black
                   mt-1
                   block
                   h-full
@@ -43,12 +45,15 @@
             <div class="select my-1 max-w-xs">
               <select name="options">
                 {% for color in colormap %}
-                  <option value={{color}}>{{color}}</option>
+                <option value={{color}}>{{color}}</option>
                 {% endfor %}
-                
+
               </select>
             </div>
-            
+              <div>
+                <p class="label">Background Colour </p>
+                <input id="id_hex_color" maxlength="7" name="hex_color" type="color">
+              </div>
 
             <button class="
                 bg-blue-500

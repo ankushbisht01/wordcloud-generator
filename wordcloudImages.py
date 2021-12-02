@@ -43,8 +43,8 @@ class ImageGen():
 
         word_cloud = WordCloud(background='white',mask=rgbarray,colormap='heat').generate(text)
 
-    def normal_wordcloud(self,text,colormap='Paste1'):
-        word_cloud = WordCloud(width=1980,height=1080,max_words=500,font_path = 'fonts/font.ttf',background_color='#585858',colormap=colormap,collocations=False).generate(text)
+    def normal_wordcloud(self,text,colormap='Paste1',bg_color='white'):
+        word_cloud = WordCloud(width=1980,height=1080,max_words=500,font_path = 'fonts/font.ttf',background_color=bg_color,colormap=colormap,collocations=False).generate(text)
         return word_cloud.to_image()
 
     def upload(self, content):
