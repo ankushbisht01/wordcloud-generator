@@ -19,11 +19,11 @@ def index(request):
             text = form.cleaned_data['text']
             colormap = request.POST['options']
             bgcolor =  form.cleaned_data['hex_color']
-            print(bgcolor)
+            
             Image = ImageGen()
             content = Image.normal_wordcloud(text,colormap,bgcolor)
             url = Image.upload(content)
-            colormaps = ['Paste1', 'Paste2', 'Paired', 'Accent', 'Dark2',
+            colormaps = ['autumn','binary', 'gist_yarg', 'gist_gray', 'gray', 'bone','pink', 'spring', 'summer',  'winter', 'cool','Wistia', 'hot', 'afmhot', 'gist_heat', 'copper','twilight', 'twilight_shifted', 'hsv','PiYG', 'PRGn', 'BrBG', 'PuOr', 'RdGy', 'RdBu', 'RdYlBu','RdYlGn', 'Spectral', 'coolwarm', 'bwr', 'seismic','Paste1', 'Paste2', 'Paired', 'Accent', 'Dark2',
                          'set1', 'Set2', 'Set3', 'tab10', 'tab20', 'tab20b', 'tab20c']
             context = {
                 'flag': True,

@@ -1,6 +1,8 @@
-{% extends 'base.html' %} {% block content %} {% include 'navbar.html' %}
+{% extends 'base.html' %} 
+{% block content %} 
+{% include 'navbar.html' %}
 
-<div class="container">
+<div >
   <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto flex flex-col">
       {% if flag %}
@@ -29,7 +31,7 @@
           <form method="post">
             {% csrf_token %}
             <label class="block text-left" style="max-width: 1000px">
-              <span class="text-gray-700">Enter Your Text</span>
+              <span class="text-black font-bold text-lg">Enter Your Text</span>
               <textarea class="
                   form-textarea
                   text-lg
@@ -39,7 +41,7 @@
                   h-full
                   w-full
                   border-solid border-4 border-light-blue-500
-                " rows="7" name="text" placeholder="Enter some long form content."></textarea>
+                " rows="7" name="text" maxlength="2000" placeholder="Maxmium word limit is 2000 characters"></textarea>
             </label>
             <p class="label">Text Color</p>
             <div class="select my-1 max-w-xs">
@@ -84,4 +86,5 @@
 <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
 </section>
 </div>
+{% include "footer.html" %}
 {% endblock %}
